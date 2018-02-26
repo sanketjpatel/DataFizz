@@ -14,7 +14,7 @@
 #
 # DP table[101][n+1], for a book_list of length n.
 
-import numpy as np
+from numpy import zeros
 
 box_keys = ['id', 'totalWeight', 'contents']
 capacity = 10.0
@@ -26,7 +26,7 @@ def populate_table(scaled_cap, scaled_weights):
     """
     max_row = scaled_cap + 1
     max_col = len(scaled_weights)+1
-    DP = np.zeros((max_row, max_col), int)
+    DP = zeros((max_row, max_col), int)
     
     for j in range(1, max_col):
         this_weight = scaled_weights[j-1]
